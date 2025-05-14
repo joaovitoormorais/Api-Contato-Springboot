@@ -15,7 +15,6 @@ Este projeto tem como objetivo oferecer uma API RESTful para operações CRUD em
 - ✅ Atualizar dados de um contato
 - ✅ Excluir contato
 - ✅ Validações com Bean Validation
-- ✅ Documentação da API com Swagger
 - ✅ Mapeamento com DTOs e uso de ModelMapper
 - ✅ Tratamento de exceções personalizado
 
