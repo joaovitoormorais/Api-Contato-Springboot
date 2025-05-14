@@ -11,7 +11,7 @@ Este projeto tem como objetivo oferecer uma API RESTful para operações CRUD em
 - ✅ Cadastrar novo contato
 - ✅ Listar todos os contatos
 - ✅ Buscar contato por ID
-- ✅ Buscar contatos por nome, e-mail ou telefone
+- ✅ Buscar contatos por nome,cpf, e-mail ou telefone
 - ✅ Atualizar dados de um contato
 - ✅ Excluir contato
 - ✅ Validações com Bean Validation
