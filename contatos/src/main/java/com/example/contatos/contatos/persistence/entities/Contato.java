@@ -1,4 +1,4 @@
-package com.example.contatos.contatos.entities;
+package com.example.contatos.contatos.persistence.entities;
 
 import jakarta.persistence.*;
 
