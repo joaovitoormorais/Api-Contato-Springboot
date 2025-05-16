@@ -1,5 +1,7 @@
 package com.example.contatos.contatos.dtos;
 
+import com.example.contatos.contatos.persistence.entities.Contato;
+
 public class ContatoDTO {
 
     private Integer id;
@@ -16,6 +18,9 @@ public class ContatoDTO {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
+    }
+
+    public ContatoDTO(Contato contato) {
     }
 
     public Integer getId() {
