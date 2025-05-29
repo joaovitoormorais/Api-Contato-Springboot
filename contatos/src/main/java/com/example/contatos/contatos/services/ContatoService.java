@@ -17,11 +17,8 @@ public class ContatoService {
     ContatoRepository contatoRepository;
 
     public Contato findById(Integer id) {
-        Optional<Contato> contato = contatoRepository.findById(id);
-        if(contato.isPresent()) {
-            return contato.get();
-        }
-        throw new ObjectNotFoundException("Contato não encontrado");
+       return contatoRepository.findById(id)
+               .orElseThrow(() -> new ObjectNotFoundException("Contato não encontrado"));
     }
 
     public List<Contato> findAll(Integer contatoId) {
