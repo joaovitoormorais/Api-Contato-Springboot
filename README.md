@@ -27,8 +27,7 @@ Este projeto tem como objetivo oferecer uma API RESTful para operações CRUD em
 - Spring Web
 - Spring Data JPA
 - Bean Validation
-- ModelMapper
 - Lombok
-- Banco de Dados H2 e PostgreSQL
+- Banco de Dados PostgreSQL
 
 ---
