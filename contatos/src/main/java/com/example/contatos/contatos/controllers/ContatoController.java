@@ -39,12 +39,10 @@ public class ContatoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ContatoDTO> update(@PathVariable Integer id,
-                                             @RequestParam(value = "contato", defaultValue = "0") Integer id_con,
-                                             @RequestBody ContatoDTO contatoDTO) {
+    public ResponseEntity<ContatoDTO> update(@PathVariable Integer id, @RequestBody ContatoDTO contatoDTO) {
         contatoDTO.setId(id);
-        Contato con = contatoService.update(id_con, contatoDTO);
-        return ResponseEntity.ok().body(new ContatoDTO(con));
+        Contato contato = contatoService.update(id, contatoDTO);
+        return ResponseEntity.ok().body(new ContatoDTO(contato));
     }
 
     @DeleteMapping("/{id}")

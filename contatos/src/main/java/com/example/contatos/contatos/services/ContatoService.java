@@ -17,8 +17,11 @@ public class ContatoService {
     ContatoRepository contatoRepository;
 
     public Contato findById(Integer id) {
-       return contatoRepository.findById(id)
-               .orElseThrow(() -> new ObjectNotFoundException("Contato não encontrado"));
+     Optional<Contato> contato = contatoRepository.findById(id);
+        if(contato.isPresent()) {
+            return contato.get();
+        }
+            throw new IllegalArgumentException("Contato não encontrado.");
     }
 
     public List<Contato> findAll(Integer contatoId) {
@@ -26,9 +29,35 @@ public class ContatoService {
     }
 
     public Contato save(Integer idCon, ContatoDTO contatoDTO) {
+       Contato contato;
+
+       if(idCon != null && idCon != 0) {
+
+           contato = findById(idCon);
+           contato.setNome(contatoDTO.getNome());
+           contato.setEmail(contatoDTO.getEmail());
+           contato.setCpf(contatoDTO.getCpf());
+
+       }else{
+
+           contato = new Contato();
+           contato.setNome(contatoDTO.getNome());
+           contato.setEmail(contatoDTO.getEmail());
+           contato.setCpf(contatoDTO.getCpf());
+       }
+
+       return contatoRepository.save(contato);
     }
 
     public Contato update(Integer idCon, ContatoDTO contatoDTO) {
+        Contato existingContato = findById(idCon);
+
+        existingContato.setNome(contatoDTO.getNome());
+        existingContato.setEmail(contatoDTO.getEmail());
+        existingContato.setCpf(contatoDTO.getCpf());
+
+        return contatoRepository.save(existingContato);
+
     }
 
     public void delete(Integer id) {
